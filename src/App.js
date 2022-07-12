@@ -42,8 +42,8 @@ function App() {
           return <div key={book}>{book}</div>;
         }
       })}
-      <div>{loading && "loading..."}</div>
-      <div>{error && "Error..."}</div>
+      <div>{loading && "Loading..."}</div>
+      <div>{error && "Error"}</div>
     </>
   );
 }

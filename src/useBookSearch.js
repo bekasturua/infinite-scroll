@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function useBookSearch(query, pageNumber) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [books, setBooks] = useState([]);
   const [hasMore, setHasMore] = useState(false);
@@ -27,7 +27,7 @@ export default function useBookSearch(query, pageNumber) {
             ...new Set([...prevBooks, ...res.data.docs.map((b) => b.title)]),
           ];
         });
-        setHasMore(res.data.docs.lenght > 0);
+        setHasMore(res.data.docs.length > 0);
         setLoading(false);
         console.log(res.data);
       })
